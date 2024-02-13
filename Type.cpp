@@ -376,3 +376,372 @@
 //	std::cout << u.f << ", " << u.f << ", " << u.c << std::endl;
 //	std::cout << sizeof(myUni) << std::endl;
 //}
+
+/* ----- < 배열 > ----- */
+//
+//
+//
+//
+//
+/* --- < 배열( Array ) > --- */
+
+/*
+< 배열 > : 동일한 형식의 값을 여러 개 저장할 수 있는 기능
+	#. 형식 변수명[크기];
+	#. 변수명[인덱스] = 값;
+	#. 변수명 뒤에 대괄호[]를 붙여 주고 크기를 지정하면 배열로 선언이 가능하다.
+		#. []기호를 첨자( subscript )라고 부른다.
+	#. 값을 가져오거나 사용할 때는 변수명 뒤에 대괄호로 인덱스( 순서 )를 지정해 줘야 한다.
+	#. 인덱스는 0을 기준으로 출발한다.
+
+< 배열의 크기 지정 > : 배열 첨자는 다양한 형태로 지정이 가능하다.
+	#. 다만, 배열을 선언할 때 크기는 상수만 가능하다.
+*/
+
+//#include <iostream>		// < Title : default >
+//
+//int main()
+//{
+//	// #. 동일한 type의 값을 여러 개 저장할 수 있다.
+//	int arr[5];
+//
+//	// #. 인덱스[] 별로 한 번씩 대입할 수 있다.
+//	arr[0] = 1; arr[1] = 2; arr[2] = 3; arr[3] = 4; arr[4] = 5;
+//
+//	for (int i = 0; i < 5; i++)
+//	{
+//		std::cout << arr[i] << " ";
+//	}
+//}
+
+//#include <iostream>		// < Title : 첨자 지정 >
+//
+//enum Order { Friend = 10 };
+//
+//int main()
+//{	// #1. 리터럴은 배열 첨자로 입력하여 배열을 선언할 수 있다.
+//	int arr1[5]{};
+//
+//	// #2. 상수 및 열거형은 배열 첨자로 입력하여 배열을 선언할 수 있다.
+//	int arr2[Friend]{};
+//	
+//	int x{ 1 };
+//	int arr3[x];
+//// #3. 변수는 배열 첨자로 입력되어 배열을 선언할 수 없다!
+//// #3-1. 변수는 실행파일이 실행될 때, 즉 런타임에 변수에 메모리 공간이 할당되며 값이 저장된다.
+//// #3-2. 그러나 배열은 컴파일타임에 미리 준비하는 것이기 때문에 컴파일 타임 상수가 필요하다.
+//
+//	// #4. 표현식은 배열 첨자로 입력하여 배열을 선언할 수 있다.
+//	int arr4[3 * 3]{};
+//}
+
+//#include <iostream>		// < Title : 구조체와 배열 >
+//
+//struct Point2D
+//{
+//	double x;
+//	double y;
+//};
+//int main()
+//{	// #. Point2D type 의 pt 이름을 가진 배열 선언
+//	Point2D pt[3]
+//	{	// #. 각 인덱스[] 별로 x값과 y값을 초기화
+//		{1.0, 1.0},
+//		{2.0, 2.0},
+//		{3.0, 3.0}
+//	};
+//
+//	// 구조체 배열은 '.'점을 통해 멤버 변수에 값을 대입
+//	pt[0].x = 1.5;
+//	pt[1].y = 5.1;
+//
+//	std::cout << pt[0].x << ", " << pt[0].y << std::endl;
+//	std::cout << pt[1].x << ", " << pt[1].y << std::endl;
+//}
+
+//#include <iostream>		// < Title : 다차원 형태의 1차원 배열 >
+//
+//int main()
+//{	// #. 1차원 배열로 15크기의 배열을 만들었다.
+//	int myArray[15]{
+//		0,0,1,0,0,
+//		0,1,1,1,0,
+//		1,1,1,1,1
+//	};
+//
+//	// #. 배열의 시작부터 끝까지 원소를 출력한다.
+//	for (int i = 0; i < 15; i++)
+//	{
+//		std::cout << myArray[i] << " ";
+//		if ((i + 1) % 5 == 0)
+//		{	// #. 단, 5로 나누어서 나머지가 0일 때마다 줄바꿈을 해준다.
+//			std::cout << std::endl;
+//		}
+//	}
+//}
+
+/* ----- < 배열 > ----- */
+//
+//
+//
+//
+//
+/* --- < 2차원 배열( 2-Dimensional Array ) > --- */
+
+/*
+< 2차원 배열 > : 배열의 배열이라는 개념으로 배열 뒤에 다시 배열을 붙여서 [][]표기한다.
+	#. 크기를 지정할 때는 [행][열]과 같이 지정한다.
+		=> 가로( ㅡ )로 줄을 그으며 아래로 세는 것을 행
+		=> 세로( ㅣ )로 줄을 그으며 옆으로 세는 것을 열
+*/
+
+//#include <iostream>		// < Title : default >
+//
+//int main()
+//{
+//	// #. 3개의 배열을 만들고 그 배열의 값으로 배열을 지정한다.
+//	int arr[3][5]
+//	{	// #. 각각의 배열마다 5개의 원소가 있는 배열이 저장된 배열이다.
+//		{0,0,1,0,0},
+//		{0,1,1,1,0},
+//		{1,1,1,1,1}
+//	};
+//
+//	// #. 가로 행 배열을 0부터 아래로 2행 배열까지 순회한다.
+//	for (int i = 0; i < 3; i++)
+//	{	// #. 세로 열 배열을 0부터 옆으로 4열 배열까지 순회한다.
+//		for (int j = 0; j < 5; j++)
+//		{	// #. i행 j열에 저장된 원소를 출력한다.
+//			std::cout << arr[i][j] << " ";
+//		}
+//		std::cout << std::endl;
+//	}
+//}
+
+//#include <iostream>		// < Title : std::array >
+//#include <array>
+//
+//int main()
+//{	// #. 원소가 3개인 배열을 만드는데 그 배열의 타입이 std::array<int, 5>이다.
+//	std::array<std::array<int, 5>, 3> arr{
+//		0,0,1,0,0,
+//		0,1,1,1,0,
+//		1,1,1,1,1
+//	};
+//	// #. 가로 행 배열을 0부터 아래로 2행 배열까지 순회한다. 
+//	for (int i = 0; i < 3; i++)
+//	{	// #. 세로 열 배열을 0부터 옆으로 4열 배열까지 순회한다.
+//		for (int j = 0; j < 5; j++)
+//		{	// #. i행 j열에 저장된 원소를 출력한다.
+//			std::cout << arr[i][j] << " ";
+//		}	std::cout << std::endl;
+//	}
+//}
+
+//#include <iostream>		// < Title : std::vector >
+//#include <vector>
+//
+//int main()
+//{	// #. 생성자를 이용하여 동적 배열 3칸을 할당하고 그 값으로 동적 배열을 할당한다.
+//	std::vector<std::vector<int>> vec(3, std::vector<int>(5));
+//
+//	vec[0] = { 0,0,1,0,0 };
+//	vec[1] = { 0,1,1,1,0 };
+//	vec[2] = { 1,1,1,1,1 };
+//
+//	// #. 가로 행 배열을 0부터 아래로 2행 배열까지 순회한다.
+//	for (int i = 0; i < 3; i++)
+//	{	// #. 세로 열 배열을 0부터 옆으로 4열 배열까지 순횐한다.
+//		for (int j = 0; j < 5; j++)
+//		{	// #. i행 j열에 저장된 원소를 출력한다.
+//			std::cout << vec[i][j] << " ";
+//		}	std::cout << std::endl;
+//	}
+//}
+
+/* --- < 좌측값( L_Value )과 우측값( R_Value ) > --- */
+
+/*
+< L_Value > : 저장할 수 있는 실명의 객체
+	#. 한줄의 코드를 넘어서도 lvalue는 지워지지 않는다.
+	#. 주로 변수를 지칭한다.
+	#. rvalue는 lvalue로 변환될 수 없다.
+
+< R_Value > : 저장할 수 없는 무명의 객체
+	#. 현재 식 이외에는 유지되지 않는 임시 값이다.
+	#. 리터럴, 상수, 연산식등을 지칭한다.
+	#. lvalue가 rvalue로 변환될 수 있다.
+
+< 배열의 이름은 L_Value가 아니다 > : 배열 이름은 메모리의 위치만 지정할 뿐이다.
+	#. 배열 첨자를 이용하여 특별한 공간을 지정하고 있을 때 lvalue가 된다.
+*/
+
+//#include <iostream>		// < Title : default >
+//
+//int main()
+//{
+//	int arrayOne[5]{ 1,2,3,4,5 };
+//	int arrayTwo[5]{};
+//
+//	arrayTwo[0] = arrayOne[0];
+//// #. arrayTwo배열의 0번째 원소에 arrayOne배열의 0번째 원소를 대입한다.
+//
+//	arrayTwo = arrayOne;
+//// #. 배열 이름은 메모리의 위치만 지정할 뿐이기 때문에 값을 저장할 수 없다.
+//// #. arrayOne의 모든 원소를 arrayTwo에 대입하려면 한 개씩 직접 대입해 줘야 한다.
+//}
+
+/* --- < 문자열( Character Array, String ) > --- */
+
+/*
+< 문자열 > : 문자들로 이루어진 집합
+	#. 문자( Character ) + 배열( Array )
+	#. 문자 리터럴 : 작은 따옴표로 둘러 싸여 있다. 'a'
+	#. 문자열 리터럴 : 큰 따옴표로 둘러 싸여 있다. "Hello"
+*/
+
+//#include <iostream>		// < Title : default >
+//
+//int main()
+//{	// #. 문자열을 한 문자씩('')입력 받을 때는 널값을 넣어야만 한다.
+//	char c[6]{ 'R','i','v','e','r','\0' };
+//	c[0] = 'M'; c[1] = 'o'; c[2] = 'n'; c[3] = 'e'; c[4] = 'y'; c[5] = '\0';
+//
+//	// #. 문자열 리터럴("")에는 \0 널값이 포함되어 있다.
+//	char std[6]{ "River" };
+//	std::cout << c << std::endl;
+//	std::cout << std << std::endl;
+//}
+
+//#include <iostream>		// < Title : std::cin >
+//
+//struct Student
+//{
+//	char name[10];
+//	int num;
+//	int score;
+//};
+//int main()
+//{
+//	Student tom;
+//	std::cout << "Input : ";
+//	std::cin >> tom.name >> tom.num >> tom.score;
+//// #. std::cin은 스페이스바, 엔터로 문자열을 구분하여 입력받는다.
+//
+//	std::cout << tom.name << std::endl;
+//	std::cout << tom.num << std::endl;
+//	std::cout << tom.score << std::endl;
+//}
+
+//#include <iostream>		// < Title : 주소 >
+//
+//int main()
+//{
+//	char myText[20]{ "Greetings!" };
+//
+//// #. 문자열은 모두 메모리 공간을 할당 받는다.
+//// #. 컴파일러는 이 메모리 공간에 접근하여 해당 문자열을 출력해준다.
+//	std::cout << myText << " : " << &myText << std::endl;
+//	std::cout << "Greetings!" << " : " << &"Greetings!" << std::endl;
+//}
+
+//#include <iostream>		// < Title : 포인터 >
+//
+//int main()
+//{
+//	char nameOne[10]{ "River" };
+//	char* pointer{ nameOne };
+//
+//// #. 배열의 이름은 해당 배열의 첫번째 원소 주소값을 가리킨다.
+//// #. 그러므로 nameOne과 &nameOne[0]의 출력 결과는 같다.
+//	std::cout << nameOne << " : " << &nameOne << " : " << &nameOne[0] << std::endl;
+//
+//// #. pointer는 nameOne의 주소값을 저장한다. 문자열의 주소값은 저장된 문자열을 출력해 준다.
+//	std::cout << pointer << " : " << &pointer << " : " << (pointer + 0) << std::endl;
+//
+//// #. nameOne은 문자 배열의 크기를, nameOne[0]은 문자 배열의 첫번째 메모리 공간의 크기를,
+//// #. &nameOne은 할당된 메모리 공간의 크기를, &nameOne[0]도 동일한 메모리 공간의 크기를 출력한다.
+//	std::cout << sizeof nameOne << " : " << sizeof nameOne[0] << " : " 
+//		<< sizeof & nameOne << " : " << sizeof & nameOne[0] << std::endl;
+//}
+
+//#include <iostream>		// < Title : const char* >
+//
+//int main()
+//{
+//	const char* name = "River";
+//// #. "River"는 만들어 질 때 메모리 공간을 할당받는다.
+//// #. name은 이 메모리 공간을 가리킨다.
+//// #. "River"는 rvalue( 무명 객체 )이기 때문에 해당 라인이 지나면 지워진다.
+//// #. 때문에 일반 포인터가 아닌 상수 포인터로 가리켜야 한다.
+//	
+//	std::cout << name << " : " << (void*)name << std::endl;
+//}
+
+/* --- < 문자열 스트림( String Stream ) > --- */
+
+/*
+< stream > : 입출력을 추상화해서 나타내어 준다.
+
+< sstream( string ) > : 문자열로부터 입력을 받는다.
+	#. ostring stream : 문자열 포맷을 조합하여 저장할 때 사용한다.
+	#. string stream : 문자열에서 내가 원하는 자료형의 데이터를 추출할 때 사용한다.
+	#. istring stream : 문자열 포맷을 parsing할 때 사용한다.
+		#. parsing : 일련의 문자열을 의미있는 token( 어휘 분석의 단위 )으로 분해하고 그것들로 이루어진 Parse tree를 만드는 과정
+
+< istream( input ) > : 사용자로부터 입력 받는다.
+
+< ifstream( file ) > : 파일로부터 입력 받는다.
+*/
+
+//#include <iostream>		// < Title : ostringstream >
+//#include <sstream>
+//
+//int main()
+//{	// #. 다양한 형식의 변수들을 하나의 객체에 저장할 수 있다.
+//	int number{ 1 };
+//	char name[]{ "River" };
+//	float average{ 90.1f };
+//
+//// #. ostringstream클래스로 객체 oss를 만들고 그 안에 변수와 문자열을 저장해 준다.
+//	std::ostringstream oss;
+//	oss << number << "번 학생 " << name << "는 평균 " << average << "입니다.";
+//
+//// #. str()함수를 이용하여 객체 안에 있는 값을 문자열로 출력할 수 있다.
+//	std::cout << oss.str() << std::endl;
+//}
+
+//#include <iostream>		// < Title : stringstream >
+//#include <sstream>
+//#include <string>
+//
+//int main()
+//{
+//	int n;
+//	std::stringstream ss;
+//	ss.str("12 345 6789 0 -12 a");
+//// #. stringstream클래스의 객체 ss를 만든다.
+//// #. str()함수를 사용해 문자열을 집어 넣는다.
+//
+//	for (int i = 0; i < 5; i++)
+//	{	// #. 문자열 중 int형식으로 변환되는 문자만 int 형식으로 꺼낸다.
+//		ss >> n;
+//		std::cout << n << std::endl;
+//	}
+//}
+
+//#include <iostream>		// < Title : istringstream >
+//#include <sstream>
+//
+//int main()
+//{	// #. istringstream클래스의 객체 iss를 만든다.
+//	std::istringstream iss("test 123 123hah ahha");
+//	std::string str1, str2, str3;
+//	int num;
+//
+//	std::cout << iss.str() << std::endl;
+//	
+//// #. 스페이스바, 탭으로 구분하여 각 변수에 저장한다.
+//	iss >> str1 >> num >> str2 >> str3;
+//	std::cout << str1 << " : " << str2 << " : " << str3 << " : " << num;
+//}
